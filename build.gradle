@@ -29,6 +29,9 @@ sourceSets.main.resources {
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    flatDir {
+        dir 'run/mods'
+    }
 }
 
 base {
@@ -116,6 +119,23 @@ configurations {
 }
 
 dependencies {
+    // The development instance supplies these mods from run/mods.  Keep them on both
+    // compile and local runtime classpaths: this addon is not intended to run alone.
+    implementation files('run/mods/create-1.21.1-6.0.10.jar')
+    implementation files('run/mods/sable-neoforge-1.21.1-2.0.5.jar')
+    implementation files('run/mods/create-aeronautics-bundled-1.21.1-1.3.1.jar')
+    // Create and Sable ship these APIs as jar-in-jar dependencies. They are present at runtime;
+    // exposing them here lets this addon compile against their supported physics hooks.
+    implementation files(zipTree('run/mods/create-1.21.1-6.0.10.jar').matching {
+        include 'META-INF/jarjar/Registrate-MC1.21-1.3.0+67.jar'
+        include 'META-INF/jarjar/ponder-neoforge-1.0.82+mc1.21.1.jar'
+    })
+    implementation files(zipTree('run/mods/sable-neoforge-1.21.1-2.0.5.jar').matching {
+        include 'META-INF/jarjar/sable-companion-common-1.21.1-1.6.0.jar'
+    })
+    implementation files(zipTree('run/mods/create-aeronautics-bundled-1.21.1-1.3.1.jar').matching {
+        include 'META-INF/jarjar/dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.1.jar'
+    })
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

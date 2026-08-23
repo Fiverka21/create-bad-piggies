@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=x": { "model": "createbadpiggies:block/plunger_wheel", "x": 90, "y": 90 },
+    "axis=y": { "model": "createbadpiggies:block/plunger_wheel", "x": 90 },
+    "axis=z": { "model": "createbadpiggies:block/plunger_wheel" }
+  }
+}
