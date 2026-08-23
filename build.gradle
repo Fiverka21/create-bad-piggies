@@ -32,6 +32,10 @@ repositories {
         url = "https://maven.ryanhcode.dev/releases"
         name = "RyanHCode Maven"
     }
+    maven {// Simulated & Sable
+        url = "https://maven.ryanhcode.dev/snapshots"
+        name = "RyanHCode Maven"
+    }
     maven { // For Veil
         name = 'BlameJared Maven (CrT / Bookshelf)'
         url = 'https://maven.blamejared.com'
@@ -42,6 +46,17 @@ repositories {
     }
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
+    maven {// Curios API
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {// No clue aero needs it
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+    maven { // CC Tweaked
+        url "https://maven.squiddev.cc"
+    }
 }
 
 dependencies {
@@ -51,8 +66,11 @@ dependencies {
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
+    implementation("dev.simulated_team.simulated:simulated-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
+    implementation("dev.ryanhcode.offroad:offroad-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
     implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
-    api("dev.ryanhcode.sable:sable-common-${project.minecraft_version}:${project.sable_version}")
+//    implementation("dev.ryanhcode.sable:sable-neoforge-${project.minecraft_version}:${project.sable_version}")
+//    api("dev.ryanhcode.sable:sable-common-${project.minecraft_version}:${project.sable_version}")
 }
 
 base {
