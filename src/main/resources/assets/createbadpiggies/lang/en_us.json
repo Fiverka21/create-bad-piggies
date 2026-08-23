@@ -2,6 +2,7 @@
   "itemGroup.createbadpiggies": "Create: Bad Piggies",
   "block.createbadpiggies.plunger": "Plunger",
   "block.createbadpiggies.plunger_wheel": "Plunger Wheel",
+  "block.createbadpiggies.plunger_harpoon": "Plunger Harpoon",
 
   "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",

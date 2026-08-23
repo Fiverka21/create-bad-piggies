@@ -9,6 +9,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -27,7 +29,12 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.create.badpiggies.block.PlungerWheelBlock;
 import com.create.badpiggies.block.PlungerBlock;
+import com.create.badpiggies.block.PlungerHarpoonBlock;
+import com.create.badpiggies.block.PlungerHarpoonAnchorBlock;
 import com.create.badpiggies.block.entity.PlungerWheelBlockEntity;
+import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
+import com.create.badpiggies.block.entity.PlungerHarpoonAnchorBlockEntity;
+import com.create.badpiggies.entity.PlungerHarpoonEntity;
 import dev.ryanhcode.offroad.content.components.TireLike;
 import dev.ryanhcode.offroad.index.OffroadDataComponents;
 import net.minecraft.resources.ResourceLocation;
@@ -43,12 +50,30 @@ public class CreateBadPiggies {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     public static final DeferredBlock<PlungerBlock> PLUNGER_BLOCK = BLOCKS.registerBlock("plunger",
             PlungerBlock::new, BlockBehaviour.Properties.of().strength(0.5F).noOcclusion());
     public static final DeferredItem<net.minecraft.world.item.BlockItem> PLUNGER = ITEMS.registerSimpleBlockItem(PLUNGER_BLOCK,
             new Item.Properties().stacksTo(16));
+    public static final DeferredBlock<PlungerHarpoonBlock> PLUNGER_HARPOON_BLOCK = BLOCKS.registerBlock("plunger_harpoon",
+            PlungerHarpoonBlock::new, BlockBehaviour.Properties.of().strength(1.5F).noOcclusion());
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> PLUNGER_HARPOON = ITEMS.registerSimpleBlockItem(
+            PLUNGER_HARPOON_BLOCK, new Item.Properties().stacksTo(1));
+    public static final DeferredHolder<EntityType<?>, EntityType<PlungerHarpoonEntity>> PLUNGER_HARPOON_PROJECTILE =
+            ENTITY_TYPES.register("plunger_harpoon", () -> EntityType.Builder
+                    .<PlungerHarpoonEntity>of(PlungerHarpoonEntity::new, MobCategory.MISC).sized(0.5F, 0.5F)
+                    .clientTrackingRange(8).updateInterval(1).build("plunger_harpoon"));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PlungerHarpoonBlockEntity>> PLUNGER_HARPOON_ENTITY =
+            BLOCK_ENTITY_TYPES.register("plunger_harpoon", () -> BlockEntityType.Builder
+                    .of(PlungerHarpoonBlockEntity::new, PLUNGER_HARPOON_BLOCK.get()).build(null));
+    public static final DeferredBlock<PlungerHarpoonAnchorBlock> PLUNGER_HARPOON_ANCHOR = BLOCKS.registerBlock(
+            "plunger_harpoon_anchor", PlungerHarpoonAnchorBlock::new,
+            BlockBehaviour.Properties.of().strength(0.5F).noOcclusion());
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PlungerHarpoonAnchorBlockEntity>>
+            PLUNGER_HARPOON_ANCHOR_ENTITY = BLOCK_ENTITY_TYPES.register("plunger_harpoon_anchor", () ->
+                    BlockEntityType.Builder.of(PlungerHarpoonAnchorBlockEntity::new, PLUNGER_HARPOON_ANCHOR.get()).build(null));
     public static final DeferredBlock<PlungerWheelBlock> PLUNGER_WHEEL = BLOCKS.registerBlock("plunger_wheel",
             PlungerWheelBlock::new, BlockBehaviour.Properties.of().strength(1.0F));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> PLUNGER_WHEEL_ITEM = ITEMS.registerSimpleBlockItem(
@@ -66,6 +91,7 @@ public class CreateBadPiggies {
             .icon(() -> PLUNGER_WHEEL_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(PLUNGER.get());
+                output.accept(PLUNGER_HARPOON.get());
                 output.accept(PLUNGER_WHEEL_ITEM.get());
             }).build());
 
@@ -78,6 +104,7 @@ public class CreateBadPiggies {
         ITEMS.register(modEventBus);
         BLOCKS.register(modEventBus);
         BLOCK_ENTITY_TYPES.register(modEventBus);
+        ENTITY_TYPES.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
@@ -101,6 +128,7 @@ public class CreateBadPiggies {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(PLUNGER.get());
+            event.accept(PLUNGER_HARPOON.get());
             event.accept(PLUNGER_WHEEL_ITEM.get());
         }
     }
