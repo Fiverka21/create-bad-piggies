@@ -66,9 +66,9 @@ dependencies {
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
-    implementation("dev.simulated_team.simulated:simulated-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
-    implementation("dev.ryanhcode.offroad:offroad-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
-    implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-${project.minecraft_version}:${project.aeronautics_version}")
+    implementation("dev.simulated_team.simulated:simulated-neoforge-${project.minecraft_version}:${project.simulated_version}")
+    implementation("dev.ryanhcode.offroad:offroad-neoforge-${project.minecraft_version}:${project.simulated_version}")
+    implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-${project.minecraft_version}:${project.simulated_version}")
 //    implementation("dev.ryanhcode.sable:sable-neoforge-${project.minecraft_version}:${project.sable_version}")
 //    api("dev.ryanhcode.sable:sable-common-${project.minecraft_version}:${project.sable_version}")
 }
