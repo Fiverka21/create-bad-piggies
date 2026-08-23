@@ -1,7 +1,7 @@
 {
-  "itemGroup.createbadpiggies": "Example Mod Tab",
-  "block.createbadpiggies.example_block": "Example Block",
-  "item.createbadpiggies.example_item": "Example Item",
+  "itemGroup.createbadpiggies": "Create: Bad Piggies",
+  "block.createbadpiggies.plunger": "Plunger",
+  "block.createbadpiggies.plunger_wheel": "Plunger Wheel",
 
   "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",

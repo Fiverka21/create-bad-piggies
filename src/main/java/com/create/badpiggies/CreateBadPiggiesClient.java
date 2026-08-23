@@ -28,4 +28,5 @@ public class CreateBadPiggiesClient {
         CreateBadPiggies.LOGGER.info("HELLO FROM CLIENT SETUP");
         CreateBadPiggies.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
+
 }
