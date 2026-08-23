@@ -184,7 +184,7 @@ neoForge.ideSyncTask generateModMetadata
 publishing {
     publications {
         maven(MavenPublication) {
-            artifactId = base.archivesName.get() + "-${project.minecraft_version}"
+            artifactId = base.archivesName.get() + "-neoforge-${project.minecraft_version}"
             if (!System.getenv("RELEASE").asBoolean())
                 version = "${rootProject.mod_version}-${System.getenv("GITHUB_RUN_NUMBER")}"
             from components.java
