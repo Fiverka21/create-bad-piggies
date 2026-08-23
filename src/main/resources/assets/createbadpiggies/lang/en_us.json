@@ -1,0 +1,13 @@
+{
+  "itemGroup.createbadpiggies": "Example Mod Tab",
+  "block.createbadpiggies.example_block": "Example Block",
+  "item.createbadpiggies.example_item": "Example Item",
+
+  "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
+  "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",
+  "createbadpiggies.configuration.section.createbadpiggies.common.toml.title": "Create: Bad Piggies Configs",
+  "createbadpiggies.configuration.items": "Item List",
+  "createbadpiggies.configuration.logDirtBlock": "Log Dirt Block",
+  "createbadpiggies.configuration.magicNumberIntroduction": "Magic Number Text",
+  "createbadpiggies.configuration.magicNumber": "Magic Number"
+}
