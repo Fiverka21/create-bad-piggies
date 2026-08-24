@@ -31,6 +31,7 @@ import com.create.badpiggies.block.PlungerWheelBlock;
 import com.create.badpiggies.block.PlungerBlock;
 import com.create.badpiggies.block.PlungerHarpoonBlock;
 import com.create.badpiggies.block.PlungerHarpoonAnchorBlock;
+import com.create.badpiggies.block.UmbrellaBlock;
 import com.create.badpiggies.block.entity.PlungerWheelBlockEntity;
 import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
 import com.create.badpiggies.block.entity.PlungerHarpoonAnchorBlockEntity;
@@ -83,7 +84,10 @@ public class CreateBadPiggies {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PlungerWheelBlockEntity>> PLUNGER_WHEEL_ENTITY =
             BLOCK_ENTITY_TYPES.register("plunger_wheel", () -> BlockEntityType.Builder
                     .of(PlungerWheelBlockEntity::new, PLUNGER_WHEEL.get()).build(null));
-
+    public static final DeferredBlock<UmbrellaBlock> UMBRELLA_BLOCK = BLOCKS.registerBlock("umbrella",
+            UmbrellaBlock::new, BlockBehaviour.Properties.of().strength(0.5F).sound(net.minecraft.world.level.block.SoundType.WOOL).noOcclusion());
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> UMBRELLA = ITEMS.registerSimpleBlockItem(
+            UMBRELLA_BLOCK, new Item.Properties().stacksTo(16)); // I think 16 is great for this
     // Creates a creative tab with the id "createbadpiggies:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.createbadpiggies")) //The language key for the title of your CreativeModeTab
@@ -93,6 +97,7 @@ public class CreateBadPiggies {
                 output.accept(PLUNGER.get());
                 output.accept(PLUNGER_HARPOON.get());
                 output.accept(PLUNGER_WHEEL_ITEM.get());
+                output.accept(UMBRELLA.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -130,6 +135,7 @@ public class CreateBadPiggies {
             event.accept(PLUNGER.get());
             event.accept(PLUNGER_HARPOON.get());
             event.accept(PLUNGER_WHEEL_ITEM.get());
+            event.accept(UMBRELLA.get());
         }
     }
 

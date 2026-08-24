@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "facing=up,open=true": { "model": "minecraft:block/end_rod" },
+    "facing=down,open=true": { "model": "minecraft:block/end_rod", "x": 180 },
+    "facing=north,open=true": { "model": "minecraft:block/end_rod", "x": 90 },
+    "facing=south,open=true": { "model": "minecraft:block/end_rod", "x": 90, "y": 180 },
+    "facing=west,open=true": { "model": "minecraft:block/end_rod", "x": 90, "y": 270 },
+    "facing=east,open=true": { "model": "minecraft:block/end_rod", "x": 90, "y": 90 },
+
+    "facing=up,open=false": { "model": "minecraft:block/target" },
+    "facing=down,open=false": { "model": "minecraft:block/target", "x": 180 },
+    "facing=north,open=false": { "model": "minecraft:block/target", "x": 90 },
+    "facing=south,open=false": { "model": "minecraft:block/target", "x": 90, "y": 180 },
+    "facing=west,open=false": { "model": "minecraft:block/target", "x": 90, "y": 270 },
+    "facing=east,open=false": { "model": "minecraft:block/target", "x": 90, "y": 90 }
+  }
+}

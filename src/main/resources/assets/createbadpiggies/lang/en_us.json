@@ -3,7 +3,8 @@
   "block.createbadpiggies.plunger": "Plunger",
   "block.createbadpiggies.plunger_wheel": "Plunger Wheel",
   "block.createbadpiggies.plunger_harpoon": "Plunger Harpoon",
-
+  "block.createbadpiggies.umbrella": "Umbrella",
+  "item.createbadpiggies.umbrella": "Umbrella",
   "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml.title": "Create: Bad Piggies Configs",
