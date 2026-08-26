@@ -9,9 +9,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import com.create.badpiggies.client.PlungerHarpoonRenderer;
-import com.create.badpiggies.client.PlungerHarpoonRopeRenderer;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = CreateBadPiggies.MODID, dist = Dist.CLIENT)
@@ -30,12 +27,6 @@ public class CreateBadPiggiesClient {
         // Some client setup code
         CreateBadPiggies.LOGGER.info("HELLO FROM CLIENT SETUP");
         CreateBadPiggies.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-    }
-
-    @SubscribeEvent
-    static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(CreateBadPiggies.PLUNGER_HARPOON_PROJECTILE.get(), PlungerHarpoonRenderer::new);
-        event.registerBlockEntityRenderer(CreateBadPiggies.PLUNGER_HARPOON_ENTITY.get(), PlungerHarpoonRopeRenderer::new);
     }
 
 }

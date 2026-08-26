@@ -1,5 +1,6 @@
 package com.create.badpiggies.block;
 
+import com.create.badpiggies.CBPBlockEntities;
 import com.create.badpiggies.CreateBadPiggies;
 import com.create.badpiggies.block.entity.PlungerHarpoonAnchorBlockEntity;
 import com.simibubi.create.foundation.block.IBE;
@@ -21,6 +22,6 @@ public class PlungerHarpoonAnchorBlock extends Block implements IBE<PlungerHarpo
 
     @Override
     public BlockEntityType<? extends PlungerHarpoonAnchorBlockEntity> getBlockEntityType() {
-        return CreateBadPiggies.PLUNGER_HARPOON_ANCHOR_ENTITY.get();
+        return CBPBlockEntities.PLUNGER_HARPOON_ANCHOR_BLOCK_ENTITY.get();
     }
 }

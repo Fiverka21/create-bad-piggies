@@ -6,6 +6,7 @@ import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import dev.simulated_team.simulated.content.blocks.rope.RopeStrandHolderBehavior;
 import dev.simulated_team.simulated.content.blocks.rope.RopeStrandHolderBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
@@ -13,8 +14,8 @@ import java.util.List;
 
 /** A rope-coupling holder attached to the solid plunger placed by a harpoon impact. */
 public class PlungerHarpoonAnchorBlockEntity extends SmartBlockEntity implements RopeStrandHolderBlockEntity {
-    public PlungerHarpoonAnchorBlockEntity(BlockPos pos, BlockState state) {
-        super(CreateBadPiggies.PLUNGER_HARPOON_ANCHOR_ENTITY.get(), pos, state);
+    public PlungerHarpoonAnchorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.create.badpiggies.block;
 
+import com.create.badpiggies.CBPBlockEntities;
+import com.create.badpiggies.CBPBlocks;
 import com.create.badpiggies.CreateBadPiggies;
 import com.create.badpiggies.block.entity.PlungerWheelBlockEntity;
 import com.simibubi.create.content.kinetics.base.RotatedPillarKineticBlock;
@@ -32,7 +34,7 @@ public class PlungerWheelBlock extends RotatedPillarKineticBlock implements IBE<
 
     @Override
     public BlockEntityType<? extends PlungerWheelBlockEntity> getBlockEntityType() {
-        return CreateBadPiggies.PLUNGER_WHEEL_ENTITY.get();
+        return CBPBlockEntities.PLUNGER_WHEEL_BLOCK_ENTITY.get();
     }
 
     @Override
@@ -57,7 +59,7 @@ public class PlungerWheelBlock extends RotatedPillarKineticBlock implements IBE<
                               ItemStack tool) {
         super.playerDestroy(level, player, pos, state, blockEntity, tool);
         if (!level.isClientSide) {
-            Block.popResource(level, pos, CreateBadPiggies.PLUNGER_WHEEL_ITEM.get().getDefaultInstance());
+            Block.popResource(level, pos, CBPBlocks.PLUNGER_WHEEL.asItem().getDefaultInstance());
         }
     }
 }

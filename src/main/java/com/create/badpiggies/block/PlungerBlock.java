@@ -1,5 +1,6 @@
 package com.create.badpiggies.block;
 
+import com.create.badpiggies.CBPBlocks;
 import com.create.badpiggies.CreateBadPiggies;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
 import net.minecraft.core.BlockPos;
@@ -43,7 +44,7 @@ public class PlungerBlock extends Block {
 
     private static boolean isCompleteWheel(Level level, BlockPos cogPos, Direction.Axis axis) {
         for (Direction direction : Direction.values()) {
-            if (direction.getAxis() != axis && !level.getBlockState(cogPos.relative(direction)).is(CreateBadPiggies.PLUNGER_BLOCK.get())) {
+            if (direction.getAxis() != axis && !level.getBlockState(cogPos.relative(direction)).is(CBPBlocks.PLUNGER_BLOCK.get())) {
                 return false;
             }
         }
@@ -56,7 +57,7 @@ public class PlungerBlock extends Block {
                 level.removeBlock(cogPos.relative(direction), false);
             }
         }
-        level.setBlock(cogPos, CreateBadPiggies.PLUNGER_WHEEL.get().defaultBlockState()
+        level.setBlock(cogPos, CBPBlocks.PLUNGER_WHEEL.get().defaultBlockState()
                 .setValue(BlockStateProperties.AXIS, axis), Block.UPDATE_ALL);
         level.playSound(null, cogPos, SoundEvents.SLIME_BLOCK_PLACE, SoundSource.BLOCKS, 0.8F, 0.85F);
     }

@@ -10,6 +10,7 @@ import dev.ryanhcode.sable.api.physics.force.ForceTotal;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.joml.Vector3d;
 
@@ -24,8 +25,8 @@ public class PlungerWheelBlockEntity extends SimpleKineticBlockEntity
     private static final Map<BlockPos, Vector3d> CONTACT_NORMALS = new ConcurrentHashMap<>();
     private final ForceTotal adhesionForce = new ForceTotal();
 
-    public PlungerWheelBlockEntity(BlockPos pos, BlockState state) {
-        super(CreateBadPiggies.PLUNGER_WHEEL_ENTITY.get(), pos, state);
+    public PlungerWheelBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
     }
 
     public static void recordSurfaceContact(BlockPos wheelPos, Vector3d normal) {

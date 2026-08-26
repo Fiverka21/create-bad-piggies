@@ -2,7 +2,7 @@ package com.create.badpiggies.entity;
 
 import java.util.Optional;
 
-import com.create.badpiggies.CreateBadPiggies;
+import com.create.badpiggies.CBPBlocks;
 import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
 
 import net.minecraft.core.BlockPos;
@@ -11,10 +11,8 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -30,16 +28,12 @@ public class PlungerHarpoonEntity extends ThrowableItemProjectile {
 
     public PlungerHarpoonEntity(EntityType<PlungerHarpoonEntity> type, Level level) {
         super(type, level);
-    }
-
-    public PlungerHarpoonEntity(Level level) {
-        this(CreateBadPiggies.PLUNGER_HARPOON_PROJECTILE.get(), level);
-        setItem(CreateBadPiggies.PLUNGER.get().getDefaultInstance());
+        setItem(CBPBlocks.PLUNGER_BLOCK.asItem().getDefaultInstance());
     }
 
     @Override
     protected Item getDefaultItem() {
-        return CreateBadPiggies.PLUNGER.get();
+        return CBPBlocks.PLUNGER_BLOCK.asItem();
     }
 
     @Override
@@ -65,7 +59,7 @@ public class PlungerHarpoonEntity extends ThrowableItemProjectile {
     public void tick() {
         if (isAttached()) {
             BlockPos pos = entityData.get(ATTACHED_BLOCK).orElseThrow();
-            if (!level().getBlockState(pos).is(CreateBadPiggies.PLUNGER_HARPOON_ANCHOR.get()))
+            if (!level().getBlockState(pos).is(CBPBlocks.PLUNGER_HARPOON_ANCHOR.get()))
                 discard();
             setDeltaMovement(Vec3.ZERO);
             return;
@@ -78,7 +72,7 @@ public class PlungerHarpoonEntity extends ThrowableItemProjectile {
         if (!level().isClientSide) {
             BlockPos anchor = hit.getBlockPos().relative(hit.getDirection());
             if (level().getBlockState(anchor).canBeReplaced()) {
-                level().setBlock(anchor, CreateBadPiggies.PLUNGER_HARPOON_ANCHOR.get().defaultBlockState(), Block.UPDATE_ALL);
+                level().setBlock(anchor, CBPBlocks.PLUNGER_HARPOON_ANCHOR.get().defaultBlockState(), Block.UPDATE_ALL);
             } else {
                 // A non-replaceable space cannot contain a newly-created solid plunger.
                 anchor = hit.getBlockPos();

@@ -1,5 +1,7 @@
 package com.create.badpiggies.block;
 
+import com.create.badpiggies.CBPBlockEntities;
+import com.create.badpiggies.CBPBlocks;
 import com.create.badpiggies.CreateBadPiggies;
 import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
 import com.simibubi.create.content.kinetics.base.DirectionalAxisKineticBlock;
@@ -29,7 +31,7 @@ public class PlungerHarpoonBlock extends DirectionalAxisKineticBlock implements 
 
     @Override
     public BlockEntityType<? extends PlungerHarpoonBlockEntity> getBlockEntityType() {
-        return CreateBadPiggies.PLUNGER_HARPOON_ENTITY.get();
+        return CBPBlockEntities.PLUNGER_HARPOON_BLOCK_ENTITY.get();
     }
 
     @Override
@@ -40,7 +42,7 @@ public class PlungerHarpoonBlock extends DirectionalAxisKineticBlock implements 
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
 
-        if (stack.is(CreateBadPiggies.PLUNGER.get()) && launcher.load()) {
+        if (stack.is(CBPBlocks.PLUNGER_BLOCK.asItem()) && launcher.load()) {
             if (!player.hasInfiniteMaterials()) {
                 stack.shrink(1);
             }
@@ -48,8 +50,8 @@ public class PlungerHarpoonBlock extends DirectionalAxisKineticBlock implements 
         }
 
         if (stack.isEmpty() && launcher.unload()) {
-            if (!player.getInventory().add(CreateBadPiggies.PLUNGER.get().getDefaultInstance())) {
-                player.drop(CreateBadPiggies.PLUNGER.get().getDefaultInstance(), false);
+            if (!player.getInventory().add(CBPBlocks.PLUNGER_BLOCK.asItem().getDefaultInstance())) {
+                player.drop(CBPBlocks.PLUNGER_BLOCK.asItem().getDefaultInstance(), false);
             }
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }

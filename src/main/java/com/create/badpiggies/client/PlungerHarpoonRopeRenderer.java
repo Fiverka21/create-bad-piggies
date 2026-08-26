@@ -20,12 +20,12 @@ public class PlungerHarpoonRopeRenderer extends SafeBlockEntityRenderer<PlungerH
     }
 
     @Override
-    public boolean shouldRenderOffScreen(PlungerHarpoonBlockEntity blockEntity) {
+    public boolean shouldRenderOffScreen(final PlungerHarpoonBlockEntity be) {
         return true;
     }
 
     @Override
-    public boolean shouldRender(PlungerHarpoonBlockEntity blockEntity, Vec3 cameraPos) {
+    public boolean shouldRender(final PlungerHarpoonBlockEntity be, final Vec3 cameraPos) {
         return true;
     }
 }
