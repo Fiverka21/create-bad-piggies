@@ -6,6 +6,7 @@ import dev.ryanhcode.offroad.content.components.TireLike;
 import dev.ryanhcode.offroad.index.OffroadDataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.Vec3;
 
@@ -19,8 +20,8 @@ public class CBPBlocks {
 
     public static final BlockEntry<PlungerBlock> PLUNGER_BLOCK =
         REGISTRATE.block("plunger", PlungerBlock::new)
-                .properties(BlockBehaviour.Properties::noOcclusion)
-                .properties(properties -> properties.strength(0.5f))
+                .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.END_ROD)
+                        .lightLevel(state -> 0))
                 .item()
                 .properties(properties -> properties.stacksTo(16))
                 .build().register();
