@@ -28,12 +28,12 @@ public class PlungerHarpoonEntity extends ThrowableItemProjectile {
 
     public PlungerHarpoonEntity(EntityType<PlungerHarpoonEntity> type, Level level) {
         super(type, level);
-        setItem(CBPBlocks.PLUNGER_BLOCK.asItem().getDefaultInstance());
+        setItem(CBPBlocks.PLUNGER_HARPOON_BLOCK.asItem().getDefaultInstance());
     }
 
     @Override
     protected Item getDefaultItem() {
-        return CBPBlocks.PLUNGER_BLOCK.asItem();
+        return CBPBlocks.PLUNGER_HARPOON_BLOCK.asItem();
     }
 
     @Override

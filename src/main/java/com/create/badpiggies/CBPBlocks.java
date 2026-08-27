@@ -37,8 +37,8 @@ public class CBPBlocks {
 
     public static final BlockEntry<PlungerHarpoonAnchorBlock> PLUNGER_HARPOON_ANCHOR =
         REGISTRATE.block("plunger_harpoon_anchor", PlungerHarpoonAnchorBlock::new)
-                .properties(BlockBehaviour.Properties::noOcclusion)
-                .properties(properties -> properties.strength(0.5f))
+                .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.END_ROD)
+                        .lightLevel(state -> 0))
                 .register();
 
     public static final BlockEntry<PlungerWheelBlock> PLUNGER_WHEEL =
