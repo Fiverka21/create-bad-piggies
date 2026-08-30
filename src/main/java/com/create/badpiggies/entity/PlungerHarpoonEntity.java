@@ -16,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
@@ -72,7 +73,8 @@ public class PlungerHarpoonEntity extends ThrowableItemProjectile {
         if (!level().isClientSide) {
             BlockPos anchor = hit.getBlockPos().relative(hit.getDirection());
             if (level().getBlockState(anchor).canBeReplaced()) {
-                level().setBlock(anchor, CBPBlocks.PLUNGER_HARPOON_ANCHOR.get().defaultBlockState(), Block.UPDATE_ALL);
+                level().setBlock(anchor, CBPBlocks.PLUNGER_HARPOON_ANCHOR.get().defaultBlockState()
+                        .setValue(BlockStateProperties.FACING, hit.getDirection()), Block.UPDATE_ALL);
             } else {
                 // A non-replaceable space cannot contain a newly-created solid plunger.
                 anchor = hit.getBlockPos();

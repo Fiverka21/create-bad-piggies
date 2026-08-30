@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "createbadpiggies:block/plunger_rope" }
+    "facing=down": { "model": "createbadpiggies:block/plunger_rope", "x": 180 },
+    "facing=east": { "model": "createbadpiggies:block/plunger_rope", "x": 90, "y": 90 },
+    "facing=north": { "model": "createbadpiggies:block/plunger_rope", "x": 90 },
+    "facing=south": { "model": "createbadpiggies:block/plunger_rope", "x": 90, "y": 180 },
+    "facing=up": { "model": "createbadpiggies:block/plunger_rope" },
+    "facing=west": { "model": "createbadpiggies:block/plunger_rope", "x": 90, "y": 270 }
   }
 }
