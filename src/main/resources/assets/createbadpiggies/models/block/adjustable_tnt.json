@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "createbadpiggies:block/adjustable_tnt_bottom",
+    "side": "createbadpiggies:block/adjustable_tnt",
+    "top": "createbadpiggies:block/adjustable_tnt_top"
+  }
+}

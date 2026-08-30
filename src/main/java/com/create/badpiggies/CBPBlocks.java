@@ -58,6 +58,15 @@ public class CBPBlocks {
                     .properties(properties -> properties.stacksTo(16))
                     .build().register();
 
+    public static final BlockEntry<AdjustableTntBlock> ADJUSTABLE_TNT =
+            REGISTRATE.block("adjustable_tnt", AdjustableTntBlock::new)
+                    .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)
+                            .strength(0.0f)
+                            .instabreak())
+                    .item()
+                    .properties(properties -> properties.stacksTo(64))
+                    .build().register();
+
     public static void load() {
         // Only exists to ensure the class is loaded
     }

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "gunpowder=0,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=1,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=2,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=3,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=4,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=5,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=6,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=7,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=8,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=9,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" },
+    "gunpowder=10,unstable=false": { "model": "createbadpiggies:block/adjustable_tnt" }
+  }
+}

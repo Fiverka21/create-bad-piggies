@@ -5,6 +5,8 @@
   "block.createbadpiggies.plunger_harpoon": "Plunger Harpoon",
   "block.createbadpiggies.umbrella": "Umbrella",
   "item.createbadpiggies.umbrella": "Umbrella",
+  "block.createbadpiggies.adjustable_tnt": "Adjustable TNT",
+  "item.createbadpiggies.adjustable_tnt": "Adjustable TNT",
   "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml.title": "Create: Bad Piggies Configs",
