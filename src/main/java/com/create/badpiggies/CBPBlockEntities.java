@@ -1,5 +1,6 @@
 package com.create.badpiggies;
 
+import com.create.badpiggies.block.entity.AdjustableTntBlockEntity;
 import com.create.badpiggies.block.entity.PlungerHarpoonAnchorBlockEntity;
 import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
 import com.create.badpiggies.block.entity.PlungerWheelBlockEntity;
@@ -9,6 +10,11 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import static com.create.badpiggies.CreateBadPiggies.REGISTRATE;
 
 public class CBPBlockEntities {
+
+    public static final BlockEntityEntry<AdjustableTntBlockEntity> ADJUSTABLE_TNT_BLOCK_ENTITY =
+            REGISTRATE.blockEntity("adjustable_tnt", AdjustableTntBlockEntity::new)
+                    .validBlock(CBPBlocks.ADJUSTABLE_TNT)
+                    .register();
 
     public static final BlockEntityEntry<PlungerHarpoonBlockEntity> PLUNGER_HARPOON_BLOCK_ENTITY =
             REGISTRATE.blockEntity("plunger_harpoon", PlungerHarpoonBlockEntity::new)

@@ -1,5 +1,7 @@
 package com.create.badpiggies.block;
 
+import com.create.badpiggies.CBPBlockEntities;
+import com.create.badpiggies.block.entity.AdjustableTntBlockEntity;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -13,13 +15,18 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.TntBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import com.simibubi.create.foundation.block.IBE;
+
+import java.util.function.BiConsumer;
 
 /** TNT whose blast radius is set by adding up to ten gunpowder items. */
-public class AdjustableTntBlock extends TntBlock {
+public class AdjustableTntBlock extends TntBlock implements IBE<AdjustableTntBlockEntity> {
     public static final MapCodec<TntBlock> CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(propertiesCodec()).apply(instance, AdjustableTntBlock::new));
     public static final IntegerProperty GUNPOWDER = IntegerProperty.create("gunpowder", 0, 10);
@@ -27,6 +34,16 @@ public class AdjustableTntBlock extends TntBlock {
     public AdjustableTntBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(UNSTABLE, false).setValue(GUNPOWDER, 0));
+    }
+
+    @Override
+    public Class<AdjustableTntBlockEntity> getBlockEntityClass() {
+        return AdjustableTntBlockEntity.class;
+    }
+
+    @Override
+    public BlockEntityType<? extends AdjustableTntBlockEntity> getBlockEntityType() {
+        return CBPBlockEntities.ADJUSTABLE_TNT_BLOCK_ENTITY.get();
     }
 
     @Override
@@ -57,6 +74,12 @@ public class AdjustableTntBlock extends TntBlock {
 
     @Override
     public void wasExploded(Level level, BlockPos pos, net.minecraft.world.level.Explosion explosion) {
+        explode(level, pos, explosion.getIndirectSourceEntity());
+    }
+
+    @Override
+    protected void onExplosionHit(BlockState state, Level level, BlockPos pos, Explosion explosion,
+                                  BiConsumer<ItemStack, BlockPos> dropConsumer) {
         explode(level, pos, explosion.getIndirectSourceEntity());
     }
 
