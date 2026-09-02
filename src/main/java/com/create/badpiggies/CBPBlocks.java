@@ -65,6 +65,14 @@ public class CBPBlocks {
                             .instabreak())
                     .item()
                     .properties(properties -> properties.stacksTo(64))
+                .build().register();
+
+    public static final BlockEntry<SodaBottleBlock> SODA_BOTTLE =
+            REGISTRATE.block("soda_bottle", SodaBottleBlock::new)
+                    .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.END_ROD)
+                            .noOcclusion().strength(0.5f))
+                    .item()
+                    .properties(properties -> properties.stacksTo(16))
                     .build().register();
 
     public static void load() {

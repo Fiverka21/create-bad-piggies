@@ -7,6 +7,8 @@
   "item.createbadpiggies.umbrella": "Umbrella",
   "block.createbadpiggies.adjustable_tnt": "Adjustable TNT",
   "item.createbadpiggies.adjustable_tnt": "Adjustable TNT",
+  "block.createbadpiggies.soda_bottle": "Soda Bottle",
+  "item.createbadpiggies.soda_bottle": "Soda Bottle",
   "goggle.createbadpiggies.adjustable_tnt.gunpowder": "    Gunpowder: %s / %s",
   "createbadpiggies.configuration.title": "Create: Bad Piggies Configs",
   "createbadpiggies.configuration.section.createbadpiggies.common.toml": "Create: Bad Piggies Configs",

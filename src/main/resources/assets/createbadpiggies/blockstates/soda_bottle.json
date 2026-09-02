@@ -1,0 +1,22 @@
+{
+  "multipart": [
+    { "when": { "facing": "up", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle" } },
+    { "when": { "facing": "down", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle", "x": 180 } },
+    { "when": { "facing": "north", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle", "x": 90 } },
+    { "when": { "facing": "south", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle", "x": 90, "y": 180 } },
+    { "when": { "facing": "west", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle", "x": 90, "y": 270 } },
+    { "when": { "facing": "east", "charged": "true" }, "apply": { "model": "createbadpiggies:block/soda_bottle", "x": 90, "y": 90 } },
+    { "when": { "facing": "up", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty" } },
+    { "when": { "facing": "down", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty", "x": 180 } },
+    { "when": { "facing": "north", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty", "x": 90 } },
+    { "when": { "facing": "south", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty", "x": 90, "y": 180 } },
+    { "when": { "facing": "west", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty", "x": 90, "y": 270 } },
+    { "when": { "facing": "east", "charged": "false" }, "apply": { "model": "createbadpiggies:block/soda_bottle_empty", "x": 90, "y": 90 } },
+    { "when": { "direction": "north" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle" } },
+    { "when": { "direction": "south" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle", "y": 180 } },
+    { "when": { "direction": "west" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle", "y": 90 } },
+    { "when": { "direction": "east" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle", "y": 270 } },
+    { "when": { "direction": "up" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle", "x": 90 } },
+    { "when": { "direction": "down" }, "apply": { "model": "createbadpiggies:block/soda_bottle_nozzle", "x": 270 } }
+  ]
+}
