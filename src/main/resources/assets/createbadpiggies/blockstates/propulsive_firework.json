@@ -1,0 +1,16 @@
+{
+  "multipart": [
+    { "when": { "facing": "up" }, "apply": { "model": "createbadpiggies:block/propulsive_firework" } },
+    { "when": { "facing": "down" }, "apply": { "model": "createbadpiggies:block/propulsive_firework", "x": 180 } },
+    { "when": { "facing": "north" }, "apply": { "model": "createbadpiggies:block/propulsive_firework", "x": 90 } },
+    { "when": { "facing": "south" }, "apply": { "model": "createbadpiggies:block/propulsive_firework", "x": 90, "y": 180 } },
+    { "when": { "facing": "west" }, "apply": { "model": "createbadpiggies:block/propulsive_firework", "x": 90, "y": 270 } },
+    { "when": { "facing": "east" }, "apply": { "model": "createbadpiggies:block/propulsive_firework", "x": 90, "y": 90 } },
+    { "when": { "direction": "north" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle" } },
+    { "when": { "direction": "south" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle", "y": 180 } },
+    { "when": { "direction": "west" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle", "y": 90 } },
+    { "when": { "direction": "east" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle", "y": 270 } },
+    { "when": { "direction": "up" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle", "x": 90 } },
+    { "when": { "direction": "down" }, "apply": { "model": "createbadpiggies:block/propulsive_firework_nozzle", "x": 270 } }
+  ]
+}

@@ -75,6 +75,15 @@ public class CBPBlocks {
                     .properties(properties -> properties.stacksTo(16))
                     .build().register();
 
+    public static final BlockEntry<PropulsiveFireworkBlock> PROPULSIVE_FIREWORK =
+            REGISTRATE.block("propulsive_firework", PropulsiveFireworkBlock::new)
+                    .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.END_ROD)
+                            .noOcclusion().strength(0.5f)
+                            .lightLevel(state -> state.getValue(PropulsiveFireworkBlock.ACTIVE) ? 4 : 0))
+                    .item()
+                    .properties(properties -> properties.stacksTo(16))
+                    .build().register();
+
     public static void load() {
         // Only exists to ensure the class is loaded
     }

@@ -1,0 +1,9 @@
+{
+  "elements": [
+    { "from": [4, 3, 4], "to": [12, 13, 12], "faces": {
+      "down": {"texture":"#body"}, "up": {"texture":"#body"}, "north": {"texture":"#body"}, "south": {"texture":"#body"}, "west": {"texture":"#body"}, "east": {"texture":"#body"} } },
+    { "from": [5, 13, 5], "to": [11, 16, 11], "faces": {
+      "down": {"texture":"#tip"}, "up": {"texture":"#tip"}, "north": {"texture":"#tip"}, "south": {"texture":"#tip"}, "west": {"texture":"#tip"}, "east": {"texture":"#tip"} } }
+  ],
+  "textures": {"body":"minecraft:block/red_concrete", "tip":"minecraft:block/gold_block"}
+}

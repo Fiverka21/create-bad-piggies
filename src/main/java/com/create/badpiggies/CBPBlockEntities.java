@@ -5,6 +5,7 @@ import com.create.badpiggies.block.entity.PlungerHarpoonAnchorBlockEntity;
 import com.create.badpiggies.block.entity.PlungerHarpoonBlockEntity;
 import com.create.badpiggies.block.entity.PlungerWheelBlockEntity;
 import com.create.badpiggies.block.entity.SodaBottleBlockEntity;
+import com.create.badpiggies.block.entity.PropulsiveFireworkBlockEntity;
 import com.create.badpiggies.client.PlungerHarpoonRopeRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -36,6 +37,11 @@ public class CBPBlockEntities {
     public static final BlockEntityEntry<SodaBottleBlockEntity> SODA_BOTTLE_BLOCK_ENTITY =
             REGISTRATE.blockEntity("soda_bottle", SodaBottleBlockEntity::new)
                     .validBlock(CBPBlocks.SODA_BOTTLE)
+                    .register();
+
+    public static final BlockEntityEntry<PropulsiveFireworkBlockEntity> PROPULSIVE_FIREWORK_BLOCK_ENTITY =
+            REGISTRATE.blockEntity("propulsive_firework", PropulsiveFireworkBlockEntity::new)
+                    .validBlock(CBPBlocks.PROPULSIVE_FIREWORK)
                     .register();
 
     public static void load() {}

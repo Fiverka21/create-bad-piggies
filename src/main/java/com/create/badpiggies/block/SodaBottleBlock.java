@@ -129,7 +129,7 @@ public class SodaBottleBlock extends DirectionalBlock implements BlockSubLevelLi
 
     @Override
     public @NotNull Direction sable$getNormal(BlockState state) {
-        return state.getValue(DIRECTION).getOpposite();
+        return state.getValue(DIRECTION);
     }
 
     @Override
@@ -159,7 +159,7 @@ public class SodaBottleBlock extends DirectionalBlock implements BlockSubLevelLi
 
         BlockSubLevelLiftProvider.resetVectors();
         BlockSubLevelLiftProvider.LIFT_FORCE.set(ctx.dir().x(), ctx.dir().y(), ctx.dir().z())
-                .mul(360.0D * timeStep);
+                .mul(480.0D * timeStep);
         BlockSubLevelLiftProvider.LIFT_POS.set(ctx.pos().getX() + 0.5D,
                 ctx.pos().getY() + 0.5D, ctx.pos().getZ() + 0.5D);
         if (localPose != null) {

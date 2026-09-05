@@ -1,0 +1,7 @@
+{
+  "elements": [
+    { "from": [6, 0, 6], "to": [10, 4, 10], "faces": {
+      "down": {"texture":"#nozzle"}, "up": {"texture":"#nozzle"}, "north": {"texture":"#nozzle"}, "south": {"texture":"#nozzle"}, "west": {"texture":"#nozzle"}, "east": {"texture":"#nozzle"} } }
+  ],
+  "textures": {"nozzle":"minecraft:block/iron_block"}
+}
