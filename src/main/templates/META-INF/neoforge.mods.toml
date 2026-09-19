@@ -21,7 +21,7 @@ license="${mod_license}"
 [[mods]] #mandatory
 
 # The modid of the mod
-modId="CreateBadPiggies" #mandatory
+modId="${mod_id}" #mandatory
 
 # The version number of the mod
 version="1.0" #mandatory
