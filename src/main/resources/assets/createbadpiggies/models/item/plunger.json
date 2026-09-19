@@ -1,3 +1,10 @@
 {
-  "parent": "createbadpiggies:block/plunger"
+	"parent": "createbadpiggies:block/plunger",
+	"display": {
+		"gui": {
+			"rotation": [-180, 143, -39],
+			"translation": [-1, -0.75, 0],
+			"scale": [0.92, 0.92, 0.92]
+		}
+	}
 }
